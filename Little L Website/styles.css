@@ -1,0 +1,219 @@
+:root {
+    --background1: #ebe34b7f; 
+    --background2: #495e57;   
+    --fontcolor: #F4CE14;     
+}
+
+
+
+/* -----------------Heading sizes------------- */
+h1 {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17rem;
+    font-weight: bold;
+    padding:0;
+    margin:0;
+}
+
+/* -----------------Main Grid Definition------------- */
+body{
+    display: grid;
+    gap:0;
+    grid-template-columns: minmax(30rem, auto);
+    grid-template-rows: 8.25rem 3.3rem auto 5rem;
+
+    padding:0;
+    margin:0;
+}
+
+/* --------------Row 1 Logo--------------------------- */
+header{
+    grid-row:1;
+    text-align: center;
+
+    background: var(--background1);
+}
+#headlogo{
+    padding-top:1rem; 
+    margin:0;
+}
+/* -------Row 2, Navigation Links, 4 Flexboxes-------- */
+nav{
+    grid-row:2; 
+    display: flex;
+
+    background: var(--background1);
+}
+
+.nav_links{
+    text-align: center; 
+    align-self: center;
+    padding:0.3rem;
+    margin: 0.5rem;
+
+    text-decoration-line: none;
+    color: var(--fontcolor);
+    background-color: var(--background2); 
+    border: solid 0.1rem var(--fontcolor);
+    border-radius: 2rem;
+
+    flex: 1 1 25%;
+}
+
+.nav_links:hover{
+    color: red;
+}
+
+/* Row 3, Banner (1 Flexbox), 3 Sections (1 Flexbox consisting of 3 Flexboxes) */
+main{
+    grid-row:3;
+    text-align: center;
+
+    color:var(--fontcolor);
+    background: var(--background1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.u_main {
+    flex: 0 1 7rem;
+
+    margin:0.5rem;
+    border: solid 0.1rem var(--fontcolor);
+    border-radius: 2rem;
+
+    font-style: italic;
+    background-image: url(bgbanner_freepiccom1.png);
+    background-size: cover;
+    opacity:1;
+
+    animation: bgchanger 300s infinite linear 0s normal none running;
+}
+
+@keyframes bgchanger {
+    0%,100% {background-position: center 0%;}
+    50% {background-position: center 100%;}
+}
+
+#discount{
+    position:relative;
+    padding: 1rem;
+
+    border-radius: 2rem;
+    transform: rotateZ(-5deg);
+    opacity:1;
+    color:var(--fontcolor);
+}
+
+#discount:hover{
+    animation: discountshaker 0.5s linear 0s infinite normal none running;
+}
+
+@keyframes discountshaker {
+    0%,100%{
+    color: var(--fontcolor);
+    transform: rotateZ(-5deg);
+    }
+
+    25% {transform: rotateZ(0deg);}
+
+    50% {
+        color:#ef3434;
+        transform: rotateZ(5deg);
+    }
+}
+
+.l_main {
+    flex: 1 1 0;
+
+    display: flex;  
+}
+.lmain_columns{
+    flex: 1 1 0;
+
+    padding: 1rem;
+    margin:0.5rem;
+
+    border-radius: 3rem;
+    background-color: var(--background2); 
+    border: solid 0.1rem var(--fontcolor);
+}
+.h3col{
+    padding-bottom: 0.25rem;
+}
+p{
+    margin:0;
+}
+
+figure{
+    padding: 1rem;
+    padding-bottom: 0.4rem;;
+    margin:0;
+}
+
+.colimgs{
+    border: solid 0.1rem var(--fontcolor);
+    border-radius: 2rem;
+}
+
+#bbutton:link, #bbutton:visited, #bbutton:active{
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin:0;
+
+    border:none;
+    border-radius: 0.4rem;
+    background-color: var(--fontcolor);
+    color:var(--background2); 
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+#bbutton:hover{
+    color: red;
+}
+
+@media screen and (max-width: 45rem) {
+    .l_main {
+            flex-wrap: wrap;
+    }
+    #open{
+        display:flex;
+        justify-content: center;
+    }
+}
+
+
+/* --------------Row 4 Logo, Copyright (2 Flexboxes)------------------------- */
+footer {
+    grid-row:4;
+    align-items:end;
+
+    background: var(--background1);
+    color: var(--background2);
+    
+    display: flex;
+  }
+
+.footer1{ 
+    text-align:left;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+
+    flex: 1 1 50%;
+}
+.footer2{
+    text-align:right;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    flex: 1 1 50%;
+}
